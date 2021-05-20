@@ -1,0 +1,28 @@
+{% extends "./_base.html" %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">詳細表示</h2>
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-outline-dark float-right" href="{% url 'index' %}">戻る</a>
+            </div>
+        </div>
+        <!--  -->
+        {% include "./item_detail_contents.html" %}
+
+        <div class="row">
+            <div class="col-12">
+                <div class="float-right mt-1 mb-3">
+                    <a class="btn btn-dark " href="{% url 'update' item.pk %}">編集</a>
+                    <a class="btn btn-danger " href="{% url 'delete' item.pk %}">削除</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-outline-dark float-right" href="{% url 'index' %}">戻る</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

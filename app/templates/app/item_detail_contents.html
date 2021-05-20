@@ -1,0 +1,156 @@
+<!--
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>顧客名</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.name|default_if_none:"（未入力）"  }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>住所</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.address|default_if_none:"（未入力）" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>メール</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.email|default_if_none:"（未入力）" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>都道府県</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.get_todofuken_display|default_if_none:"（未入力）" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>所属団体（マスタ連動）</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{ item.Dantai|default_if_none:"（未入力）" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>リース期限</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.leaseDate|date:"Y年m月d日" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>オンラインサポート</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.onlineSupport|yesno:"○,×" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>HPのURL</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.hpUrl|default_if_none:"（未入力）" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>メモ</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{  item.memo|default_if_none:"（未入力）" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>作成者</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{ item.created_by.get_full_name }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>作成時間</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{ item.created_at|date:"Y/m/d G:i:s" }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>更新者</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{ item.updated_by.get_full_name }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 col-sm-3">
+        <p>更新時間</p>
+    </div>
+    <div class="col-7 col-sm-9">
+        <p>{{ item.updated_at|date:"Y/m/d G:i:s" }}</p>
+    </div>
+</div>
+-->
+
+
+<div class="row">
+    <div class="col-12">
+
+        <table border="1">
+            <tr>
+                <th>項目名</th>
+                <th>内容</th>
+            </tr>
+            <tr>
+                <td>顧客名</td>>
+                <td>{{ item.name|default_if_none:"未入力" }}</td>
+            </tr>
+            <tr>
+                <td>住所</td>>
+                <td>{{ item.address|default_if_none:"" }}</td>
+            </tr>
+            <tr>
+                <td>メール</td>>
+                <td>{{ item.email|default_if_none:"" }}</td> 
+            </tr>
+            <tr>
+                <td>都道府県</td>>
+                <td>{{ item.get_todofuken_display|default_if_none:"" }}</td>
+            </tr>
+            <tr>
+                <td>所属団体</td>>
+                <td>{{ item.Dantai|default_if_none:"" }}</td>
+            </tr>
+            <tr>
+                <td>リース期限</td>>
+                <td>{{ item.leaseDate|date:"Y年m月d日" }}</td> 
+            </tr>
+            <tr>
+                <td>オンラインサポート</td>>
+                <td align="center">{{ item.onlineSupport|yesno:"○,×" }}</td>
+            </tr>
+            <tr>
+                <td>HPのURL</td>>
+                <td>{{ item.hpUrl}}</td> 
+            </tr>
+            <tr>
+                <td>メモ</td>>
+                <td>{{ item.memo}}</td> 
+            </tr>
+        </table>
+
+    </div>
+</div>
