@@ -6,4 +6,4 @@ class AppConfig(AppConfig):
     管理画面での表示名を指定する
     """
     name = 'app'
-    verbose_name = '2.マスタ管理'
+    verbose_name = 'マスタ管理'

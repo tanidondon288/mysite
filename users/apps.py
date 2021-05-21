@@ -7,4 +7,4 @@ class UsersConfig(AppConfig):
     管理画面での表示名を指定する
     """
     name = 'users'
-    verbose_name = '1.ユーザー管理'
+    verbose_name = 'ユーザー管理'
