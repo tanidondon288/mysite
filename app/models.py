@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import User
+from django.core import validators
 
 class Dantai(models.Model):
     """
@@ -40,6 +41,18 @@ class Item(models.Model):
         max_length=20,
         blank=True,
         null=True,
+    )
+
+    name_furigana = models.CharField(
+        verbose_name='フリガナ',
+        max_length=20,
+        blank=True,
+        null=True,
+        default='',
+        validators=[validators.RegexValidator(
+            regex=u'^[ァ-ヶ]+$',
+            message='全角フリガナで入力してください',
+        )]
     )
 
     address = models.CharField(
