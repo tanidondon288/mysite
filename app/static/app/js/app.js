@@ -97,7 +97,7 @@ $(function () {
       location.hash = '#message';
     }
     // URLが変更されるのを監視
-    $(window).on('save',function(event){
+    $(window).on('popstate',function(event){
       if(location.hash != '#message') {
         // モーダルを実行
         $('#modal').modal('show');
