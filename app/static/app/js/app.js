@@ -60,10 +60,6 @@ $(function () {
     // https://auxiliary.github.io/rpage/
     $(".pagination").rPage();
 
-    //jquery.autoKanaの自動ふりがな・カタカナ入力対応
-    $.fn.autoKana('#id_name', '#id_name_furigana', {
-        katakana : true
-    });
 
     //カタカナチェック（未完成）
     //$("input[name='name_furigana']").blur(function(){
@@ -72,5 +68,24 @@ $(function () {
     //        $("input[name='name_furigana']").append("あああカタカナ以外が入力されています。<br>");
     //    }
     //  });
+
+    //jquery.autoKanaの自動ふりがな・カタカナ入力対応
+    $.fn.autoKana('#id_name', '#id_name_furigana', {
+        katakana : true
+    });
+
+    //ページ移動時にアラート出す
+    changeFlg = false;
+    $("form input, form textarea, form select").change(function() {
+        changeFlg = true;
+    });
+    $('.save').click(function() {
+        changeFlg = false;
+    });
+    $(window).on('beforeunload', function() {
+        if (changeFlg) {
+            return "ページを移動しようとしています。\n入力した内容が失われますがよろしいですか？";
+        }
+    });
 
 });
