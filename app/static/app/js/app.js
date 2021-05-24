@@ -88,4 +88,24 @@ $(function () {
         }
     });
 
+    //スマホ用「ページ移動時にアラート出す」
+    var hash = location.hash;
+    if(hash != '#message') {
+      // pushStateで現在のURLを履歴にスタックする
+      history.pushState(null,null,location.href);
+      // URLにtagを設置する
+      location.hash = '#message';
+    }
+    // URLが変更されるのを監視
+    $(window).on('save',function(event){
+      if(location.hash != '#message') {
+        // モーダルを実行
+        $('#modal').modal('show');
+      }
+    });
+    $('#back').click(function() {
+      history.back();
+      return false;
+    });
+
 });
