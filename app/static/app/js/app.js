@@ -5,6 +5,7 @@ $(function () {
     // 時間系フィールドにはbootstrap-datepickerよbootstrap-datetimepickerの利用を推奨します。
     // 参考 https://pypi.org/project/django-tempus-dominus/
 
+
     // Bootstrap Datepicker
     $('.dateinput').datepicker({
         todayBtn: 'linked',
@@ -58,4 +59,18 @@ $(function () {
     // jQuery Plugin rPageを利用
     // https://auxiliary.github.io/rpage/
     $(".pagination").rPage();
+
+    //jquery.autoKanaの自動ふりがな・カタカナ入力対応
+    $.fn.autoKana('#id_name', '#id_name_furigana', {
+        katakana : true
+    });
+
+    //カタカナチェック（未完成）
+    //$("input[name='name_furigana']").blur(function(){
+    //    if(!$(this).val().match(/^[ァ-ヶ　\r\n\t]*$/)){
+    //    //実行内容
+    //        $("input[name='name_furigana']").append("あああカタカナ以外が入力されています。<br>");
+    //    }
+    //  });
+
 });

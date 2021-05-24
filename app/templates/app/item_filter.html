@@ -58,7 +58,7 @@
                                     <p>住所09</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.address|default_if_none:"未入力12" }}</p>
+                                    <p>{{ item.address1|default_if_none:"未入力12" }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -66,7 +66,7 @@
                                     <p>都道府県10</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{  item.get_todofuken_display|default_if_none:"未入力13" }}</p>
+                                    <p>{{  item.get_address1_display|default_if_none:"未入力13" }}</p>
                                 </div>
                             </div>
 
@@ -113,7 +113,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>作成時間</p>
+                                    <p>作成日時</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
                                     <p>{{ item.created_at|date:"Y/m/d G:i:s" }}</p>
@@ -145,10 +145,10 @@
                 <table border="1">
                     {% if item_list %}
                     <tr>
-                        <th>顧客名</th>
+                        <th><ruby>顧客名<rt>こきゃくめい</rt></ruby></th>
                         <th>住所</th>
                         <!--  <th>メール</th> -->
-                        <th>都道府県</th>
+                        <!--  <th>都道府県</th> -->
                         <th>所属団体</th>
                         <!-- <th>リース期限</th> -->
                         <!-- <th>Online</th> -->
@@ -163,9 +163,9 @@
                     {% for item in item_list %}
                     <tr>
                         <td>{{ item.name|default_if_none:"未入力" }}</td>
-                        <td>{{ item.address|default_if_none:"" }}</td>
+                        <!--  <td>{{ item.address1|default_if_none:"" }}</td> -->
                         <!--  <td>{{ item.email|default_if_none:"" }}</td> -->
-                        <td>{{ item.get_todofuken_display|default_if_none:"" }}</td>
+                        <td>{{ item.get_address1_display|default_if_none:"" }}{{ item.address2|default_if_none:"" }}</td>
                         <td>{{ item.Dantai|default_if_none:"" }}</td>
                         <!-- <td>{{ item.leaseDate|date:"Y年m月d日" }}</td> -->
                         <!-- <td align="center">{{ item.onlineSupport|yesno:"○,×" }}</td> -->

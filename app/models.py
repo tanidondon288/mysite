@@ -33,7 +33,7 @@ class Item(models.Model):
       各フィールドを定義する
     参考：
     ・公式 モデルフィールドリファレンス
-    https://docs.djangoproject.com/ja/2.1/ref/models/fields/
+    https://docs.djangoproject.com/ja/3.1/ref/models/fields/
     """
 
     name = models.CharField(
@@ -51,24 +51,22 @@ class Item(models.Model):
         default='',
         validators=[validators.RegexValidator(
             regex=u'^[ァ-ヶ]+$',
-            message='全角フリガナで入力してください',
+            message='全角フリガナ20文字以内で入力して下さい',
         )]
     )
 
-    address = models.CharField(
-        verbose_name='住所',
-        max_length=40,
+    postcode = models.CharField(
+        verbose_name='郵便番号',
+        max_length=7,
         blank=True,
         null=True,
+        default='',
+        validators=[validators.RegexValidator(
+            regex=r'^[0-9]+$',
+            message='半角数字7文字（ハイフン「-」無し）で入力して下さい',
+        ),validators.MinLengthValidator(7)]
     )
 
-    email = models.EmailField(
-        verbose_name='メール',
-        max_length=100,
-        blank=True,
-        null=True,
-    )
-    
     todofukenChoice = (
         (1, '北海道'),
         (2, '青森県'),
@@ -119,9 +117,30 @@ class Item(models.Model):
         (47, '沖縄県 '),
     )
 
-    todofuken = models.IntegerField(
+    address1 = models.IntegerField(
         verbose_name='都道府県',
         choices=todofukenChoice,
+        blank=True,
+        null=True,
+    )
+
+    address2 = models.CharField(
+        verbose_name='市町村番地',
+        max_length=40,
+        blank=True,
+        null=True,
+    )
+
+    address3 = models.CharField(
+        verbose_name='建物名',
+        max_length=40,
+        blank=True,
+        null=True,
+    )
+
+    email = models.EmailField(
+        verbose_name='メール',
+        max_length=100,
         blank=True,
         null=True,
     )
