@@ -116,7 +116,7 @@ $(function () {
         } else {
           $field.removeClass('not-empty');
         }
-      });
+    });
 
 
 });
