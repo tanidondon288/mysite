@@ -17,14 +17,14 @@ class ItemFilterSet(django_filters.FilterSet):
 
     # 検索フォームの「並び順」の設定
     order_by = OrderingFilter(
-        initial='作成時間',
+        initial='作成日時',
         fields=(
             ('created_at', 'created_at'),
             ('updated_at', 'updated_at'),
         ),
         field_labels={
-            'created_at': '作成時間',
-            'updated_at': '更新時間',
+            'created_at': '作成日時',
+            'updated_at': '更新日時',
         },
         label='並び順'
     )

@@ -19,7 +19,33 @@
         <div class="row">
             <div class="col-12">
                 <form method="post" id="myform">
-                    {% crispy form %}
+
+                    <!--フローティングラベルの為に各項目毎に定義する -->
+                    <label>顧客名</label>
+                    {{ form.name | as_crispy_field }}
+                    <label>フリガナ</label>
+                    {{ form.name_furigana | as_crispy_field }}
+                    <label>郵便番号</label>
+                    {{ form.postcode | as_crispy_field }}
+                    <label>住所</label>
+                    {{ form.address1 | as_crispy_field }}
+                    {{ form.address2 | as_crispy_field }}
+                    {{ form.address3 | as_crispy_field }}
+                    <label>メール</label>
+                    {{ form.email | as_crispy_field }}
+                    <label>所属団体</label>
+                    {{ form.Dantai | as_crispy_field }}
+                    <label>リース期限</label>
+                    {{ form.leaseDate | as_crispy_field }}
+                    {{ form.onlineSupport | as_crispy_field }}
+                    <label>HPのURL</label>
+                    {{ form.hpUrl | as_crispy_field }}
+                    <label>メモ</label>
+                    {{ form.memo | as_crispy_field }}
+                    
+                    <!--フローティングラベルでなければ、以下１行でよいのにね... -->
+                    <!--{% crispy form %}-->
+
                 </form>
             </div>
         </div>

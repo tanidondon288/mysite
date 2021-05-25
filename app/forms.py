@@ -100,6 +100,7 @@ class ItemForm(forms.ModelForm):
         max_length=20,
         required=False,
         help_text="全角フリガナ20文字以内で入力して下さい",
+        widget=forms.TextInput(attrs={'placeholder':'フリガナ'}),
     )
 
     postcode = forms.RegexField(
@@ -107,7 +108,7 @@ class ItemForm(forms.ModelForm):
         regex=r'^[0-9]+$',
         required=False,
         max_length=7,
-        widget=forms.TextInput(attrs={'onKeyUp' : "AjaxZip3.zip2addr('postcode','','address1','address2')"}),
+        widget=forms.TextInput(attrs={'onKeyUp' : "AjaxZip3.zip2addr('postcode','','address1','address2')",'placeholder':'郵便番号'}),
         help_text="半角数字7文字（ハイフン「-」無し）で入力して下さい",
     )
 
@@ -115,10 +116,25 @@ class ItemForm(forms.ModelForm):
         model = Item
         fields = '__all__'
 
+        widgets = {
+            'name':forms.TextInput(attrs={'placeholder':'顧客名'}),
+            'address2':forms.TextInput(attrs={'placeholder':'市町村番号'}),
+            'address3':forms.TextInput(attrs={'placeholder':'建物名'}),
+            'email':forms.EmailInput(attrs={'placeholder':'メールアドレス'}),
+            'hpUrl':forms.URLInput(attrs={'placeholder':'例：http://abc.co.jp、https://abc.com'}),
+        }
+
+        #削除予定
+        #labels = {
+        #    'address3':'テストテスト',
+        #}
+
+
         ##ForeignKeyのモデル項目の形式を変更した場合は以下を使う。（モデルフォームなのでclass Meta内で行うようにする）
         #widgets = {
         #    'Dantai' : forms.RadioSelect
         #}
+
 
         # 以下のフィールド以外が入力フォームに表示される
         # AutoField

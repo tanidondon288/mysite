@@ -272,9 +272,9 @@ class Item(models.Model):
         editable=False,
     )
 
-    # 作成時間
+    # 作成日時
     created_at = models.DateTimeField(
-        verbose_name='作成時間',
+        verbose_name='作成日時',
         blank=True,
         null=True,
         editable=False,
@@ -291,9 +291,9 @@ class Item(models.Model):
         editable=False,
     )
 
-    # 更新時間
+    # 更新日時
     updated_at = models.DateTimeField(
-        verbose_name='更新時間',
+        verbose_name='更新日時',
         blank=True,
         null=True,
         editable=False,
