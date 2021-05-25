@@ -118,7 +118,7 @@ class ItemForm(forms.ModelForm):
 
         widgets = {
             'name':forms.TextInput(attrs={'placeholder':'顧客名'}),
-            'address2':forms.TextInput(attrs={'placeholder':'市町村番号'}),
+            'address2':forms.TextInput(attrs={'placeholder':'市町村番地'}),
             'address3':forms.TextInput(attrs={'placeholder':'建物名'}),
             'email':forms.EmailInput(attrs={'placeholder':'メールアドレス'}),
             'hpUrl':forms.URLInput(attrs={'placeholder':'例：http://abc.co.jp、https://abc.com'}),
