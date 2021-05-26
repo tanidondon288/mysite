@@ -108,9 +108,12 @@ $(function () {
     //  return false;
     //});
 
-    //フローティングラベル（Herokuで動かないのでコメントアウト）
+
+    ////フローティングラベル
+    //Herokuデプロイ時にlabelのclass=col-form-labelが消えるので、floatinglabelを追加
     $('.form-group').children('label').addClass('floatinglabel');
 
+    //テキストを入力する際にnot-emptyを追加
     $('.textinput').on('input', function() {
         var $field = $(this).closest('.form-group');
         if (this.value) {
