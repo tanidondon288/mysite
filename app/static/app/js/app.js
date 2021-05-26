@@ -108,7 +108,9 @@ $(function () {
     //  return false;
     //});
 
-    //フローティングラベル
+    //フローティングラベル（Herokuで動かないのでコメントアウト）
+    $('.form-group').children('label').addClass('floatinglabel');
+
     $('.textinput').on('input', function() {
         var $field = $(this).closest('.form-group');
         if (this.value) {
@@ -118,6 +120,24 @@ $(function () {
         }
     });
 
-    
+    //ひらがな⇒カタカナ自動変換
+    // 方法１：forms.pyでname_furiganaのclassにhira_changeを追加している。
+    //             $(".hira_change").blur(function () {
+    // 方法２：以下の#id_name_furigana"でも指定できる。
+    //             $("#id_name_furigana").blur(function () {
+    $("#id_name_furigana").blur(function () {
+        hiraChange($(this));
+    });
+      
+    hiraChange = function (ele) {
+        var val = ele.val();
+        var hira = val.replace(/[ぁ-ん]/g, function (s) {
+          return String.fromCharCode(s.charCodeAt(0) + 0x60)
+        });
+      
+        if (val.match(/[ぁ-ん]/g)) {
+          $(ele).val(hira)
+        }   
+    };
 
 });

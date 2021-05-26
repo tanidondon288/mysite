@@ -101,6 +101,7 @@ class ItemForm(forms.ModelForm):
         required=False,
         help_text="全角フリガナ20文字以内で入力して下さい",
         widget=forms.TextInput(attrs={'placeholder':'フリガナ'}),
+        #widget=forms.TextInput(attrs={'placeholder':'フリガナ','class':'hira_change'}),
     )
 
     postcode = forms.RegexField(

@@ -19,8 +19,9 @@
         <div class="row">
             <div class="col-12">
                 <form method="post" id="myform">
-
-                    <!--フローティングラベルの為に各項目毎に定義する -->
+                    <!-- crispy form  -->
+                    
+                    <!--フローティングラベルが動かないので以下はコメントアウト -->
                     <label>顧客名</label>
                     {{ form.name | as_crispy_field }}
                     <label>フリガナ</label>
@@ -42,9 +43,6 @@
                     {{ form.hpUrl | as_crispy_field }}
                     <label>メモ</label>
                     {{ form.memo | as_crispy_field }}
-                    
-                    <!--フローティングラベルでなければ、以下１行でよいのにね... -->
-                    <!--% crispy form %-->
 
                 </form>
             </div>
