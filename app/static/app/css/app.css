@@ -30,8 +30,8 @@ table tr:nth-child(odd){
   position: absolute;                           /*配置（位置）設定*/
   text-overflow: ellipsis;                      /*非表示のあふれた内容をどのように表示するか設定。ellipsisは「...」で表示*/
   text-align: left;                                /*水平方向の配置を設定*/
-  -webkit-transform: translate(1px,-4.5px) scale(0.7,0.7)!important;  /*拡大縮小移動回転を指定できるプロパティ*/
-        transform: translate(1px,-4.5px) scale(0.7,0.7)!important;
+  -webkit-transform: translate(1px,-1.5px) scale(0.7,0.7)!important;  /*拡大縮小移動回転を指定できるプロパティ*/
+        transform: translate(1px,-1.5px) scale(0.7,0.7)!important;
 /*  -webkit-transition: all .2s ease-out;   /*トランジション（時間的な変化）を設定できるプロパティ*/
 /*        transition: all .2s ease-out; */
 }
