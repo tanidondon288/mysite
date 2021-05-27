@@ -58,7 +58,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS':  [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,8 +141,10 @@ AUTH_USER_MODEL = 'users.User'
 
 # 管理サイトのログイン機能を通常のログイン機能として使う
 # https://docs.djangoproject.com/ja/2.1/ref/settings/#login-url
-LOGIN_URL = 'admin:login'
-LOGOUT_REDIRECT_URL = '/'
+#LOGIN_URL = 'admin:login'
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/top'
+LOGOUT_REDIRECT_URL = '/' 
 
 # django-crispy-forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs

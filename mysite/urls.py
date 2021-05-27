@@ -15,12 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView 
 
 # ルーティング設定
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.urls')),
-]
+    #path('', include('app.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('top/', include('app.urls')),    
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+	]
 
 # 管理サイトの見出しを変更可能
 #  タイトル；タイトルタグで使用

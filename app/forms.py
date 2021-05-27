@@ -95,6 +95,13 @@ class ItemForm(forms.ModelForm):
 #        required=False,
 #    )
 
+    name = forms.CharField(
+        label='顧客名',
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(attrs={'placeholder':'顧客名','class':'validate[required,maxSize[50]]'}),
+    )
+
     name_furigana = forms.CharField(
         label='フリガナ',
         max_length=20,
@@ -118,11 +125,13 @@ class ItemForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'name':forms.TextInput(attrs={'placeholder':'顧客名'}),
+            # 'name':forms.TextInput(attrs={'placeholder':'顧客名'}),
             'address2':forms.TextInput(attrs={'placeholder':'市町村番地'}),
             'address3':forms.TextInput(attrs={'placeholder':'建物名'}),
-            'email':forms.EmailInput(attrs={'placeholder':'メールアドレス'}),
-            'hpUrl':forms.URLInput(attrs={'placeholder':'例：http://abc.co.jp、https://abc.com'}),
+            # 'email':forms.EmailInput(attrs={'placeholder':'メールアドレス'}),
+            # 'email':forms.EmailInput(attrs={'placeholder':'メールアドレス','validate':'mailadd'}),
+            'email':forms.EmailInput(attrs={'placeholder':'メールアドレス','class':'validate[custom[email]]'}),
+            'hpUrl':forms.URLInput(attrs={'placeholder':'例：http://abc.co.jp、https://abc.com','class':'validate[custom[url]]'}),
         }
 
         #削除予定

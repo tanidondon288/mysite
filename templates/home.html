@@ -1,0 +1,19 @@
+
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<p>前回ログイン中にブラウザを閉じました。</p>
+<p>再ログインをしてください。</p>
+ログインユーザー  {{ user.username }}
+  <!-- <p><a href="{% url 'home' %}">logout</a></p> -->
+  <p><a href="{% url 'logout' %}">ログアウト</a></p>
+  <p><a href="{% url 'login' %}">再ログイン</a></p>
+{% else %}
+<p>ログインされていません。</p>
+<a href="{% url 'login' %}">login</a>
+{% endif %}
+
+{% endblock %}

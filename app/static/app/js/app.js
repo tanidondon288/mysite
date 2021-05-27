@@ -112,7 +112,6 @@ $(function () {
     ////フローティングラベル
     //Herokuデプロイ時にlabelのclass=col-form-labelが消えるので、floatinglabelを追加
     $('.form-group').children('label').addClass('floatinglabel');
-
     //テキストを入力する際にnot-emptyを追加
     $('.textinput').on('input', function() {
         var $field = $(this).closest('.form-group');
@@ -131,7 +130,6 @@ $(function () {
     $("#id_name_furigana").blur(function () {
         hiraChange($(this));
     });
-      
     hiraChange = function (ele) {
         var val = ele.val();
         var hira = val.replace(/[ぁ-ん]/g, function (s) {
@@ -142,5 +140,27 @@ $(function () {
           $(ele).val(hira)
         }   
     };
+
+    ////jQueryのみ(validation用のengineやpluginを未使用)で実現する動的バリデーション
+    // $("input[name='email']").blur(function(){
+    //     if($(this).attr('validate').match("mailadd")){
+    //         if(!$(this).val().match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/g)){
+    //           if($(this).next().text() === ""){
+    //             $(this).after("<div class='vErrorMsg'>メールアドレスの形式で入力してください</div>");
+    //           }
+    //           return true;
+    //         }else{
+    //           if($(this).next().text() !== "") $(this).next().remove();
+    //         }
+    //     }
+    // });
+
+    //$("#myform").validationEngine();
+     $("#myform").validationEngine( 'attach', { // オプションを使用する際には'attach'が必要
+         promptPosition: "topLeft", // エラーメッセージの表示位置
+         focusFirstField: true, // エラー時に一番最初の入力フィールドにフォーカスさせるかどうか。デフォルトはtrue
+         scroll: true, // エラー時に一番最初の入力フィールドまでスクロールさせるかどうか。デフォルトはtrue
+     });
+
 
 });
