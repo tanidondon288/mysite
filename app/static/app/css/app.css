@@ -19,10 +19,9 @@ table tr:nth-child(odd){
   background-color: rgb(223,215,202)
 }
 
-
 /*フローティングラベル（Herokuで動かない為コメントアウト）*/
 .floatinglabel {
- color: #8E8C84;                                /*フローティングラベル（ヘルプテキスト）の文字色*/
+  color: #8E8C84;                                /*フローティングラベル（ヘルプテキスト）の文字色*/
   /*font-size: 12px!important;*/                /*フォントサイズ。既存CSSのどっかで定義済みなので!importantで強制上書き*/
   opacity: 0;                                       /*要素の透明度。0.0が完全に透明～1.0が完全に不透明*/
   padding: 0px 6px;                          /*パディング領域の設定*/
@@ -55,8 +54,7 @@ table tr:nth-child(odd){
 }
 */
 
-.not-empty .textinput {
+.not-empty .textinput .floatingInput {
   padding-bottom: 2px;
   padding-top: 18px;
 }
-

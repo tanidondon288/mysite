@@ -111,14 +111,16 @@ $(function () {
 
     ////フローティングラベル
     //Herokuデプロイ時にlabelのclass=col-form-labelが消えるので、floatinglabelを追加
-    $('.form-group').children('label').addClass('floatinglabel');
+    $("#myform").children('.form-group').children('label').addClass('floatinglabel');
+    $("#myform").children('.form-group').children('input').addClass('floatingInput');
+
     //テキストを入力する際にnot-emptyを追加
     $('.textinput').on('input', function() {
         var $field = $(this).closest('.form-group');
         if (this.value) {
-          $field.addClass('not-empty');
+            $field.addClass('not-empty');
         } else {
-          $field.removeClass('not-empty');
+            $field.removeClass('not-empty');
         }
     });
 

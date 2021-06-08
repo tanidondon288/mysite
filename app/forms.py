@@ -58,7 +58,7 @@ class ItemForm(forms.ModelForm):
     """
     モデルフォーム構成クラス
     ・公式 モデルからフォームを作成する
-    https://docs.djangoproject.com/ja/2.1/topics/forms/modelforms/
+    https://docs.djangoproject.com/ja/3.1/topics/forms/modelforms/
     """
 
 #    address1 = forms.MultipleChoiceField(

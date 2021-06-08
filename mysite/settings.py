@@ -186,7 +186,8 @@ LOGGING = {
         # 自作アプリケーション全般のログを拾う
         '': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            # 'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False,
         },
         # Django本体のログ全般を拾う
@@ -199,7 +200,8 @@ LOGGING = {
         'django.db.backends': {
             'handlers': ['console'],
             # DEBUGで出力ON、INFOでOFF
-            'level': 'INFO',
+            # 'level': 'INFO',
+            'level': 'DEBUG',
             'propagate': False,
         },
     }
