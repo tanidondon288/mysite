@@ -121,59 +121,59 @@
                 <th>内容</th>
             </tr>
             <tr>
-                <td>顧客名</td>>
+                <td>顧客名</td>
                 <td>{{ item.name|default_if_none:"未入力" }}</td>
             </tr>
             <tr>
-                <td>フリガナ</td>>
+                <td>フリガナ</td>
                 <td>{{ item.name_furigana|default_if_none:"未入力" }}</td>
             </tr>
             <tr>
-                <td>郵便番号</td>>
+                <td>郵便番号</td>
                 <td>{{ item.postcode|default_if_none:"" }}</td>
             </tr>
             <tr>
-                <td>住所</td>>
+                <td>住所</td>
                 <td>{{ item.get_address1_display|default_if_none:"" }}{{ item.address2|default_if_none:"" }}{{ item.address3|default_if_none:"" }}</td>
             </tr>
             <tr>
-                <td>メール</td>>
+                <td>メール</td>
                 <td>{{ item.email|default_if_none:"" }}</td> 
             </tr>
             <tr>
-                <td>所属団体</td>>
+                <td>所属団体</td>
                 <td>{{ item.Dantai|default_if_none:"" }}</td>
             </tr>
             <tr>
-                <td>リース期限</td>>
+                <td>リース期限</td>
                 <td>{{ item.leaseDate|date:"Y年m月d日" }}</td> 
             </tr>
             <tr>
-                <td>オンラインサポート</td>>
+                <td>オンラインサポート</td>
                 <td align="center">{{ item.onlineSupport|yesno:"○,×" }}</td>
             </tr>
             <tr>
-                <td>HPのURL</td>>
+                <td>HPのURL</td>
                 <td>{{ item.hpUrl}}</td> 
             </tr>
             <tr>
-                <td>メモ</td>>
+                <td>メモ</td>
                 <td>{{ item.memo}}</td> 
             </tr>
             <tr>
-                <td>作成者</td>>
+                <td>作成者</td>
                 <td>{{ item.created_by.get_full_name }}</td> 
             </tr>
             <tr>
-                <td>作成日時</td>>
+                <td>作成日時</td>
                 <td>{{ item.created_at|date:"Y/m/d G:i:s" }}</td> 
             </tr>
             <tr>
-                <td>更新者</td>>
+                <td>更新者</td>
                 <td>{{ item.updated_by.get_full_name }}</td> 
             </tr>
             <tr>
-                <td>更新日時</td>>
+                <td>更新日時</td>
                 <td>{{ item.updated_at|date:"Y/m/d G:i:s" }}</td> 
             </tr>
         </table>
